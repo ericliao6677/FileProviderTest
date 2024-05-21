@@ -1,9 +1,9 @@
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
-var path = Directory.GetCurrentDirectory();
-var path2 = builder.Environment.ContentRootPath;
-var path3 = Path.GetTempFileName();
+//var path = Directory.GetCurrentDirectory();
+//var path2 = builder.Environment.ContentRootPath;
+//var path3 = Path.GetTempFileName();
 
 // Add services to the container.
 
@@ -15,9 +15,7 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")));
 
-
 builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(@"D:\FileTest"));
-
 
 var app = builder.Build();
 
